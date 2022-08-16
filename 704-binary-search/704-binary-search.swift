@@ -4,7 +4,7 @@ class Solution {
         var right = nums.count - 1
         
         while left <= right {
-            let pivot = (left + right)/2
+            let pivot = left + (right - left)/2
             
             if nums[pivot] == target {
                 return pivot
