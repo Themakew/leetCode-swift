@@ -8,9 +8,11 @@ class Solution {
             
             if nums[pivot] == target {
                 return pivot
+            } else if target < nums[pivot] {
+                right = pivot - 1
+            } else {
+                left = pivot + 1
             }
-            
-            target < nums[pivot] ? (right = pivot - 1) : (left = pivot + 1)
         }
         
         return -1
