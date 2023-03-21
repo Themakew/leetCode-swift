@@ -1,16 +1,18 @@
 class Solution {
     func isPalindrome(_ x: Int) -> Bool {
-        if x < 0 { return false } // Negative numbers cannot be palindromes
+        if x < 0 || (x % 10 == 0 && x != 0) { 
+            return false 
+        }
 
         var number = x
         var reversed = 0
 
-        while number != 0 {
+        while x > reversed {
             let digit = number % 10
             reversed = reversed * 10 + digit
             number /= 10
         }
 
-        return x == reversed
+        return x == reversed || x == reversed/10
     }
 }
