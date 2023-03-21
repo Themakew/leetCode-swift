@@ -1,17 +1,16 @@
 class Solution {
     func isPalindrome(_ x: Int) -> Bool {
-        let chars = Array(String(x))
-        var leftIndex = 0
-        var rightIndex = chars.count - 1
+        if x < 0 { return false } // Negative numbers cannot be palindromes
 
-        for _ in 0..<(chars.count/2) {
-            if chars[leftIndex] == chars[rightIndex] {
-                leftIndex += 1
-                rightIndex -= 1
-            } else {
-                return false
-            }
+        var number = x
+        var reversed = 0
+
+        while number != 0 {
+            let digit = number % 10
+            reversed = reversed * 10 + digit
+            number /= 10
         }
-        return true
+
+        return x == reversed
     }
 }
