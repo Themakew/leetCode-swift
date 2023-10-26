@@ -21,9 +21,9 @@ class Solution {
         var fastPointer: ListNode? = head
         var slowPointer: ListNode? = head
         
-        while fastPointer != nil && fastPointer?.next != nil {
-            fastPointer = fastPointer?.next?.next
+        while fastPointer?.next != nil {
             slowPointer = slowPointer?.next
+            fastPointer = fastPointer?.next?.next
         }
         
         return slowPointer
