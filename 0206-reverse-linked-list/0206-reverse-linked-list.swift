@@ -14,11 +14,11 @@ class Solution {
     }
                                 
     func reverseListInternal(_ current: ListNode?, _ previous: ListNode?) -> ListNode? {
-        if current == nil { return previous }
+        guard let current = current else { return previous }
 
-        var next = current!.next      
-        current!.next = previous              
+        let next = current.next
+        current.next = previous
 
-        return reverseListInternal(next, current)      
+        return reverseListInternal(next, current)
     }
 }
