@@ -1,16 +1,15 @@
 class Solution {
     func moveZeroes(_ nums: inout [Int]) {
-        var zerosList = [Int]()
-
-        nums = nums.filter { number in
-            if number == 0 {
-                zerosList.append(0)
-                return false
-            }      
-            
-            return true
-        }
+        var lastZeroIndex = 0
         
-        nums += zerosList
+        for currentIndex in 0..<nums.count {
+            if nums[currentIndex] != 0 {
+                let auxiliar = nums[lastZeroIndex]
+                
+                nums[lastZeroIndex] = nums[currentIndex]
+                nums[currentIndex] = auxiliar
+                lastZeroIndex+=1
+            }    
+        }
     }
 }
