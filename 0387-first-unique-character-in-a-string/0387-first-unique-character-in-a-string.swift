@@ -11,7 +11,7 @@ class Solution {
         }
         
         for (index, key) in s.enumerated() {
-            if (indexesDict[key] ?? 0) < 2 {
+            if (indexesDict[key] ?? 0) == 1 {
                 return index
             }
         }
